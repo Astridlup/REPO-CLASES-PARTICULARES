@@ -6,7 +6,6 @@ Guía rápida de uso común para trabajar con Git desde la terminal (CMD, Bash, 
 
 ## 🔻 Clonar un repositorio
 
-bash
 git clone https://github.com/usuario/repositorio.git
 
 
