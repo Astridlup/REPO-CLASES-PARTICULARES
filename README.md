@@ -1,42 +1,62 @@
-# 🧰 Comandos Básicos de Git
+## 🧠 Problema 1: Conversión de edad
 
-Guía rápida de uso común para trabajar con Git desde la terminal (CMD, Bash, PowerShell).
+**Temas:** `int`, `input`, `print`  
+
+Pedile al usuario que ingrese su edad en años. Guardala en una variable de tipo entero y mostrá cuántos días aproximadamente ha vivido (sin contar años bisiestos).
+
+### Ejemplo:
+📥 Ingrese su edad: 25
+📤 Has vivido aproximadamente 9125 días.
+
+
 
 ---
 
-## 🔻 Clonar un repositorio
+## 💵 Problema 2: Precio con impuestos
 
-git clone https://github.com/usuario/repositorio.git
+**Temas:** `float`, `input`, `print`, operaciones
 
+Pedile al usuario que ingrese el precio de un producto. Mostrá por pantalla el precio final con un IVA del 21%.
 
-🔀 Cambiar de rama
+### Ejemplo:
 
-git checkout nombre-de-la-rama
-
-
-Crear una nueva rama y moverse a ella:
-
+📥 Precio del producto: 1000
+📤 El precio final con IVA es: 1210.0
 
 
-git checkout -b nueva-rama
+---
 
 
 
-⬇️ Obtener últimos cambios del repositorio remoto
+## 🧾 Problema 3: Validador de nombre y edad
+
+**Temas:** `string`, `int`, `input`, `print`, `if/else`
+
+Pedile al usuario que ingrese su nombre y su edad.  
+Si la edad es mayor o igual a 18, imprimí un mensaje de bienvenida.  
+Si no, indicá que debe ser mayor de edad para continuar.
+
+### Ejemplo 1:
+ Ingrese su nombre: Cristian
+📥 Ingrese su edad: 17
+📤 Cristian, aún no sos mayor de edad. No podés continuar.
+
+
+---
 
 
 
-git pull
+## 🧮 Problema 4: Calculadora básica
 
-🆕 Agregar cambios al área de staging
+**Temas:** `float`, `string`, `input`, `print`, `if/elif/else`
 
-Agregar un archivo específico:
+Pedile al usuario que ingrese dos números y una operación (`+`, `-`, `*`, `/`).  
+Mostrá el resultado según la operación ingresada. Si la operación no es válida, mostrá un mensaje de error.
 
+### Ejemplo 1:
 
+📥 Ingrese el primer número: 10
+📥 Ingrese el segundo número: 5
+📥 Ingrese la operación (+, -, *, /): *
+📤 El resultado es: 50.0
 
-git add archivo.txt
-
-
-💬 Confirmar los cambios con un mensaje 
-
-git commit -m "Mensaje descriptivo del cambio"
