@@ -1,42 +1,86 @@
-# 🧰 Comandos Básicos de Git
+## 📘 Teoría: Condicionales en Python
 
-Guía rápida de uso común para trabajar con Git desde la terminal (CMD, Bash, PowerShell).
+Los **condicionales** nos permiten ejecutar diferentes bloques de código dependiendo de si una condición es verdadera (`True`) o falsa (`False`).
 
----
+### 🔹 Sintaxis básica
 
-## 🔻 Clonar un repositorio
+```
+if condición:
+    # bloque si la condición es verdadera
 
-git clone https://github.com/usuario/repositorio.git
+```
 
-
-🔀 Cambiar de rama
-
-git checkout nombre-de-la-rama
-
-
-Crear una nueva rama y moverse a ella:
+🔸 Ejemplo:
 
 
+```
+edad = 20
 
-git checkout -b nueva-rama
+if edad >= 18:
+    print("Sos mayor de edad.")
 
-
-
-⬇️ Obtener últimos cambios del repositorio remoto
-
-
-
-git pull
-
-🆕 Agregar cambios al área de staging
-
-Agregar un archivo específico:
+```
 
 
+🔹 if...else
+Cuando queremos hacer algo si la condición es verdadera y otra cosa si es falsa:
 
-git add archivo.txt
+```
+if condición:
+    # si la condición es verdadera
+else:
+    # si la condición es falsa
+```
 
 
-💬 Confirmar los cambios con un mensaje 
+🔸 Ejemplo:
 
-git commit -m "Mensaje descriptivo del cambio"
+```
+edad = 16
+
+if edad >= 18:
+    print("Podés votar.")
+else:
+    print("Todavía no podés votar.")
+```
+
+🔹 if...elif...else
+Usamos elif (abreviatura de else if) cuando tenemos múltiples condiciones posibles.
+
+```
+if condición1:
+    # bloque 1
+elif condición2:
+    # bloque 2
+else:
+    # bloque si ninguna se cumple
+```
+
+🔸 Ejemplo:
+
+```
+nota = 7
+
+if nota >= 9:
+    print("Excelente")
+elif nota >= 6:
+    print("Aprobado")
+else:
+    print("Desaprobado")
+```
+
+🧪 Operadores de comparación más usados:
+| Operador | Significado       | Ejemplo          |
+| -------- | ----------------- | ---------------- |
+| `==`     | Igual a           | `x == 10`        |
+| `!=`     | Distinto de       | `x != 5`         |
+| `>`      | Mayor que         | `edad > 18`      |
+| `<`      | Menor que         | `nota < 4`       |
+| `>=`     | Mayor o igual que | `peso >= 50`     |
+| `<=`     | Menor o igual que | `altura <= 1.80` |
+
+
+🧠 Tips útiles:
+El bloque indentado (tabulado) debe ir debajo del if, elif o else, si no, da error.
+
+Se pueden anidar condicionales (if dentro de otro if), pero hay que tener cuidado con la indentación.
