@@ -1,42 +1,98 @@
-# 🧰 Comandos Básicos de Git
+# 🐬 MySQL y Bases de Datos Relacionales
 
-Guía rápida de uso común para trabajar con Git desde la terminal (CMD, Bash, PowerShell).
+Las bases de datos son repositorios donde almacenamos información estructurada. En las bases de datos **relacionales**, como **MySQL**, la información se organiza en **tablas** que se relacionan entre sí.
 
 ---
 
-## 🔻 Clonar un repositorio
+## 📦 Crear una tabla en MySQL
 
-git clone https://github.com/usuario/repositorio.git
+```sql
+CREATE TABLE nombreTabla (
+    Campo_tabla INT NOT NULL PRIMARY KEY, 
+    Campo_tabla2 VARCHAR(20)
+);
+```
+
+📘 Tipos de datos comunes
+
+INT: almacena números enteros.
+
+VARCHAR(n): almacena texto de hasta n caracteres. Se recomienda usar hasta 250 caracteres.
+
+DATETIME: almacena fechas y horas en formato específico.
+
+🧱 Restricciones (Constraints)
+NOT NULL: el campo no puede quedar vacío.
+
+PRIMARY KEY: campo que identifica de forma única cada registro.
+
+FOREIGN KEY: referencia una clave primaria en otra tabla.
+
+AUTO_INCREMENT: valor que se incrementa automáticamente en cada nuevo registro.
+
+UNIQUE: garantiza que no haya valores repetidos en ese campo.
+
+CONSTRAINT: define reglas sobre relaciones entre tablas.
+
+➕ Insertar datos en una tabla
+
+```
+INSERT INTO nombreTabla(campo1, campo2, campo3) 
+VALUES ("valor1", 23, "valor3");
+```
+
+🔍 Ver registros de una tabla
+
+SELECT * FROM nombreTabla;
 
 
-🔀 Cambiar de rama
+El * indica que queremos ver todos los campos de la tabla.
 
-git checkout nombre-de-la-rama
+🧪 Ejemplo completo
+Crear tablas relacionadas: Usuarios y Roles
 
+```
+CREATE TABLE Roles (
+    idRol INT AUTO_INCREMENT PRIMARY KEY,
+    nombreRol VARCHAR(100) NOT NULL UNIQUE
+);
 
-Crear una nueva rama y moverse a ella:
+CREATE TABLE Usuarios (
+    idUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombreUsuario VARCHAR(250) NOT NULL,
+    correo VARCHAR(250) NOT NULL UNIQUE,
+    fechaRegistro DATETIME NOT NULL,
+    idRol INT NOT NULL,
+    CONSTRAINT fk_rol FOREIGN KEY (idRol) REFERENCES Roles(idRol)
+);
+```
 
+Insertar datos
 
+```
+INSERT INTO Roles(nombreRol) VALUES ('Administrador'), ('Usuario');
 
-git checkout -b nueva-rama
+INSERT INTO Usuarios(nombreUsuario, correo, fechaRegistro, idRol)
+VALUES 
+('Cristian Bazán', 'cristian@example.com', NOW(), 1),
+('Ana Gómez', 'ana@example.com', NOW(), 2);
+```
 
+Consultar registros relacionados
 
+## ✅ Conceptos aplicados en el ejemplo
 
-⬇️ Obtener últimos cambios del repositorio remoto
+| 🧩 Concepto         | 💡 Aplicación en el código                                 |
+|---------------------|------------------------------------------------------------|
+| `CREATE TABLE`      | Creación de las tablas `Usuarios` y `Roles`                |
+| `INT`, `VARCHAR`, `DATETIME` | Tipos de datos usados para los campos                  |
+| `NOT NULL`          | Asegura que ciertos campos no puedan quedar vacíos         |
+| `PRIMARY KEY`       | Claves únicas que identifican a cada registro              |
+| `AUTO_INCREMENT`    | IDs que se generan automáticamente                         |
+| `UNIQUE`            | Campos que no permiten valores duplicados (`correo`)       |
+| `FOREIGN KEY`       | Relación entre usuarios y roles a través de `idRol`        |
+| `CONSTRAINT`        | Define reglas como la clave foránea `fk_rol`               |
+| `INSERT INTO`       | Inserción de registros en las tablas                       |
+| `SELECT`            | Consulta de registros en una tabla                         |
+| `JOIN`              | Unir tablas para consultar datos relacionados              |
 
-
-
-git pull
-
-🆕 Agregar cambios al área de staging
-
-Agregar un archivo específico:
-
-
-
-git add archivo.txt
-
-
-💬 Confirmar los cambios con un mensaje 
-
-git commit -m "Mensaje descriptivo del cambio"
