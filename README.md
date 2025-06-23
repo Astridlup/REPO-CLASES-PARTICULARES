@@ -78,6 +78,33 @@ VALUES
 ('Ana Gómez', 'ana@example.com', NOW(), 2);
 ```
 
+✏️ Actualizar registros
+
+UPDATE nombreTabla 
+SET campo1 = "nuevoValor", campo2 = 99 
+WHERE condicion;
+
+📌 Ejemplo: cambiar el correo del usuario con ID 1
+
+UPDATE Usuarios 
+SET correo = "cristian.bazan@ejemplo.com" 
+WHERE idUsuario = 1;
+
+⚠️ ¡Atención! Siempre usá WHERE para evitar modificar todos los registros de la tabla.
+
+🗑️ Eliminar registros
+DELETE FROM nombreTabla 
+WHERE condicion;
+
+📌 Ejemplo: eliminar al usuario con ID 2
+
+DELETE FROM Usuarios 
+WHERE idUsuario = 2;
+
+🔒 El WHERE es obligatorio para evitar eliminar todos los datos accidentalmente.
+
+
+
 Consultar registros relacionados
 
 ## ✅ Conceptos aplicados en el ejemplo
