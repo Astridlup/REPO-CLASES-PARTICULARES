@@ -1,42 +1,37 @@
-# 🧰 Comandos Básicos de Git
+# Estructura básica de una página web en HTML
 
-Guía rápida de uso común para trabajar con Git desde la terminal (CMD, Bash, PowerShell).
+Este es un ejemplo **muy simple** de cómo se arma la estructura base de una página web usando solamente HTML, sin estilos (CSS) ni scripts (JavaScript).
 
----
+## Estructura general
 
-## 🔻 Clonar un repositorio
+Una página web básica suele tener tres partes principales:
 
-git clone https://github.com/usuario/repositorio.git
+- `header`: la parte de arriba, donde suele ir el título, el logo o el menú.
+- `main`: el contenido principal de la página.
+- `footer`: la parte de abajo, donde va información extra como derechos de autor o enlaces de contacto.
 
+## Código de ejemplo
 
-🔀 Cambiar de rama
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mi página básica</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenidos a mi página</h1>
+      <p>Este es el encabezado</p>
+    </header>
 
-git checkout nombre-de-la-rama
+    <main>
+      <h2>Contenido principal</h2>
+      <p>Acá va el contenido importante de la página.</p>
+    </main>
 
-
-Crear una nueva rama y moverse a ella:
-
-
-
-git checkout -b nueva-rama
-
-
-
-⬇️ Obtener últimos cambios del repositorio remoto
-
-
-
-git pull
-
-🆕 Agregar cambios al área de staging
-
-Agregar un archivo específico:
-
-
-
-git add archivo.txt
-
-
-💬 Confirmar los cambios con un mensaje 
-
-git commit -m "Mensaje descriptivo del cambio"
+    <footer>
+      <p>© 2025 Mi página web</p>
+    </footer>
+  </body>
+</html>
