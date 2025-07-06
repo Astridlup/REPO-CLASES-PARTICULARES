@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Css se basa en selectores 
+Los selectores son llamadas a los elementso
+del html  */
+
+/* header {
+    background: #ff0000;
+}
+
+main {
+    background: green; 
+}
+
+footer {
+    background: yellow; 
+} */
+/* 
+Tiene diversos tipos de selectores. 
+
+Puede seleccionar por tipo de html:  */
+/* header {
+
+}
+img {
+
+} */
+
+/* Puede seleccionar por lo que se llama "className", 
+un nombre de clase general  */
+
+/* .section-1 {
+
+} */
+
+/* Puede seleccionar por id  */
+
+
+/* Selectores de mayor jerarquía */
+
+header {
+    /* --Configuraciones de layout-- */
+    /* la forma en la que se visualizan
+    los elementos 
+    se basa en la propiedad display de css  */
+    display: flex;
+    /* El align items se mueve por 3 ejes  */
+    /* flex-start, center y flex-end */
+    align-items: center;
+    /* El justify-content define la relación entre los elementos
+    Cómo se llevan entre ellos? Se empujan? O se mantienen cercanos? 
+    puede ser de estas 3 formas: space-evenly, center y space-between. 
+    Space evenly distribuye el espacio restante de manera equitativa, dando sensación de equilibrio
+    Space between los empuja en puntos extremos
+    Center los mantiene centrados */
+
+    /* space-between, center, space-evenly  */
+    justify-content: space-between;
+
+    /* -- Margenes y espacios -- */
+    /* Hay 2 tipos de margenes en css: interno y externo. 
+    También llamados padding y margin.  */
+    /* El padding empuja a los elementos internos. */
+    /* El padding se aplica en direcciones */
+    /* Las direcciones parten desde arriba
+    y siguen el orden del reloj  */
+    padding: 30px ;
+    /* El margin empuja a los elementos externos */
+
+    /* --- Color y forma ---  */
+    /* La propiedad que se usa para establecer un fondo  */
+    /* es el background  */
+
+    /* Los colores en css y en programacion  */
+    /* Se pueden establecer de diversas maneras  */
+    /* La más comun, siendo el codigo hex  */
+    background: #818AA3;
+}
+
+header img {
+   
+}
